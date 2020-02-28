@@ -1,0 +1,140 @@
+@import ../vars
+	
+// =================================
+// ДИАЛОГИ
+// =================================
+
+.message
+	max-height: 909px
+	overflow-y: auto
+	&__item
+		display: flex
+		padding: 20px 24px 20px 27px
+		border-bottom: $bd
+		text-decoration: none
+		color: $c
+		transition: 0.3s ease
+		&:hover
+			background: $c-title
+	&__avatar
+		width: 60px
+		height: 60px
+		border-radius: 5px
+		overflow: hidden
+		img
+			display: flex
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__content
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		width: calc(100% - 60px)
+		padding-left: 11px
+		box-sizing: border-box
+	&__personal-info
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__personal-mess
+		display: flex
+		justify-content: space-between
+	&__name
+		position: relative
+		line-height: 1
+		display: flex
+		align-items: center
+		text-decoration: none
+		// a
+		// 	font-size: rem(24)
+		// 	font-weight: 500
+		// 	color: $c-accent
+		// 	text-decoration: none
+	&__status
+		margin-left: 8px
+		width: 10px
+		height: 10px
+		background: #44CE21
+		border-radius: 50%
+	&__text
+		width: 74%
+		height: 29px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+	&__time
+		line-height: 1
+	&__count
+		display: inline-block
+		font-size: rem(18)
+		font-weight: 500
+		color: $c-w
+		margin-right: 10px
+		padding: 0 8px 0 5px
+		background: $c-accent
+		border-radius: 5px
+
+// =================================
+// ДИАЛОГИ - ВНУТРИ
+// =================================
+.mymess-head
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 10px 30px 10px 21px
+	&__back
+		position: relative
+		padding-left: 14px
+		text-decoration: none
+		&::before
+			content: ''
+			position: absolute
+			top: 8px
+			left: 0
+			width: 5px
+			height: 11px
+			background: url('../img/_src/dialog/back.svg') no-repeat center
+			transition: 0.3s ease
+		&:hover.mymess-head__back::before
+			left: -5px
+	&__title
+		display: flex
+		align-items: center
+		text-decoration: none
+	&__delet
+		width: 15px
+		height: 20px
+		background: url('../img/_src/dialog/delet.svg') no-repeat center
+		transition: 0.3s ease
+		&:hover
+			transform: scale(.9)
+.message__status_left
+	margin-left: 0
+	margin-right: 8px
+
+.message_inner
+	max-height: 830px
+	min-height: 830px
+	padding-top: 15px
+.message__item_inner
+	padding: 15px 36px 15px 21px
+	border: 0 none
+	& .message__content
+		padding-left: 18px
+	& p
+		margin: 0
+.message__inner-text
+	width: 86%
+	margin-top: 19px
+.message__item_inner-active
+	background: $c-title
+	border: $bd
+
+.message-write
+	display: flex
+	align-items: center
+	padding: 15px 35px 15px 21px
+	&__inp-wrap
+		position: relative
+		width: calc(100% - 43px)

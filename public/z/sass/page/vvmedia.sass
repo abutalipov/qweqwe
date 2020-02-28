@@ -1,0 +1,987 @@
+@import ../vars
+
+@media only screen and (max-width : 768px) 
+    // body
+        // background: $c-w
+    .container
+        padding: 0
+    .container-mobile
+        padding-left: 40px
+        padding-right: 40px
+
+    .total-indent
+        margin: 0 auto
+    
+    .show-tablet
+        display: block
+    .hidden-tablet
+        display: none
+
+    // =============================
+    // MENU
+    // =============================
+
+    .mobile-menu
+        display: block
+    .main-menu,
+    .info-menu,
+    .separator-menu
+        display: none
+    .main-menu.main-menu_mobile,
+    .info-menu.info-menu_mobile
+        display: block   
+
+    
+    // =============================
+    // LOGIN
+    // =============================
+
+    .header
+        height: 60px
+    .container_m-white
+        background: $c-w
+        min-height: calc(100vh - 40px)
+    .logo__icon
+        width: 60px
+        height: 30px
+        background-size: contain
+        margin-right: 21px
+    .logo__text
+        width: 94px
+        height: 20px
+        background-size: contain
+    .auth-panel
+        max-width: 638px
+        margin: 0px auto
+        padding: 87px 50px
+        border: none
+    .logo-auth__logo
+        width: 100%
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+
+    // =============================
+    // MYPAGE
+    // =============================
+
+    .search-head,
+    .profile-head__avatar
+        display: none
+    .header__left
+        width: 40%
+    .profile-head
+        width: 57%
+    .mobile-menu-profile__name
+        max-width: 305px
+    .profile-head__name
+        font-weight: $f-w-m
+    .profile-head__name::after
+        display: none
+    .profile-head__name_back::after
+        display: block
+    .profile-head__info_active+.profile-head__menu
+        display: none
+
+    .p-page-col__menu
+        width: 0
+        // display: none
+    .p-page-col__main
+        width: 100%
+
+    .p-page-head
+        display: none
+
+    .p-mobile
+        display: block
+
+    // =============================
+    // WRITE POST
+    // =============================    
+
+    .write-post
+        margin: 10px 0
+    .write-post__input
+        padding: 18px 237px 18px 40px
+        border-radius: 0
+        border-left: 0 none
+        border-right: 0 none
+    .write-post__input+.write-post__action
+        right: 40px
+    .write-post_full .write-post__input
+        border-radius: 0
+        border-left: 0 none
+        border-right: 0 none
+    .write-post_full .write-post__input
+        padding: 18px 75px 18px 40px
+    .write-post__smile
+        right: 40px
+    .write-post__footer
+        padding-top: 10px
+        padding-bottom: 10px
+        border-radius: 0    
+
+    // =============================
+    // P-TABLE
+    // =============================
+
+    .p-table
+        margin-bottom: 0px
+    .p-table_mg-mobile
+        margin-bottom: 10px
+    // .p-table__header
+    //     display: none
+    .p-table__nav
+        padding-top: 15px
+        // padding: 15px 40px 0
+        border-radius: 0
+    .p-table-search
+        right: 40px
+    .p-table_bg
+        border-radius: 0
+        border-right: 0 none
+        border-left: 0 none
+
+    .post-item
+        padding-top: 30px
+        margin-bottom: 0
+        // padding: 30px 40px 0
+    .post-author__name
+        max-width: 195px
+    .post-comments-write
+        left: -40px
+        padding-top: 12px
+        padding-bottom: 12px
+        // padding: 12px 40px
+        border-radius: 0
+    .post-comments__item
+        padding-top: 30px
+
+    // =============================
+    // MYPAGE - ABOUT
+    // =============================
+
+    .p-mobile__about
+        // .list-me__item
+        //     &:last-child
+        //         margin-bottom: 0
+        .list-me__title
+            width: 36%
+
+    // =============================
+    // LIST-ME
+    // =============================
+
+    .list-me__title_big
+        width: 45%
+        max-width: 200px
+
+    // =============================
+    // PAGE SKILL
+    // =============================
+
+    .about-rating__list-text
+        width: 67%
+
+    .about-photo__gallery
+        width: calc(100% + 40px)
+        justify-content: normal
+        overflow-x: auto
+    .about-photo__img
+        min-width: 130px
+        width: 130px
+        margin-right: 10px
+
+    // =============================
+    // POST
+    // =============================
+
+    .post-content__gallery
+        margin-top: 20px
+
+    // =============================
+    // DIALOG
+    // =============================
+
+    .main-search.main-search_dialog
+        margin-bottom: 0
+    .main-search_dialog
+        .main-search__input
+            padding: 15px 85px 15px 40px
+            border-radius: 0
+            border-left: 0 none
+            border-right: 0 none
+            border-bottom: 0 none
+        .main-search__icon_main
+            right: 40px
+
+    .message__item
+        padding: 20px 40px 20px 40px
+
+    // =============================
+    // DIALOG - INNER
+    // =============================
+
+    .mymess-head
+        padding: 10px 0
+    .message__item_inner
+        padding: 15px 40px
+    .message-write
+        padding: 15px 0 15px 70px
+
+    .message_inner
+        max-height: calc(100vh - 205px)
+        min-height: calc(100vh - 205px)
+
+    // =============================
+    // TOP USER
+    // =============================
+
+    .top-users
+        border-right: 0 none
+        border-left: 0 none
+        border-radius: 0
+        height: calc(100% - 208px)
+    .top-users__body
+        position: relative
+        flex-direction: column
+        align-items: flex-start
+    .top-users__vote
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translate(0, -50%)
+    .top-users__city,
+    .top-users__name
+        max-width: 60%
+        line-height: 1
+    .top-users__item::before
+        padding-bottom: 10px
+        box-sizing: border-box
+
+    // =============================
+    // SETTINGS
+    // =============================
+
+    .main-setting
+        // padding: 3.3% 3% 5.6% 3%
+        padding-top: 3.3%
+        padding-bottom: 5.6%
+    .main-setting__form
+        // width: 100%
+        margin: 0 auto
+    .form-group
+        flex-flow: row wrap
+    .main-setting .form-group__input, 
+    .main-setting .form-group__select, 
+    .main-setting .form-group__textarea
+        // max-width: 410px
+        // min-width: 335px
+        // width: 100%
+    .form-group__date .form-group__select
+        // max-width: 33.333%
+        // min-width: 33.333%
+    .main-setting
+        .form-group__label
+            min-width: 115px
+            // text-align: right
+    .main-setting__footer
+        max-width: 100%
+
+    // =============================
+    // SEARCH
+    // =============================
+
+    .search-page
+        padding-top: 35px
+        padding-bottom: 35px
+        background: $c-w
+        height: calc(100vh - 60px)
+
+    .form-group-column
+        flex-direction: column
+        align-items: center
+    
+    .form-group_col
+        margin-bottom: 20px
+
+
+
+
+@media only screen and (max-width : 480px)
+    .show-mobile
+        display: block
+    .hidden-mobile
+        display: none
+
+    .container-mobile
+        padding-left: 15px
+        padding-right: 15px
+    .type
+        &-h1
+            &_m
+                font-size: $h2
+        &-h2
+            &_m
+                font-size: $h3
+        &-h3
+            &_m
+                font-size: rem(14)
+        &-h4
+            &_m
+                font-size: rem(12)
+    body
+        font-size: rem(12)
+    h2
+        font-size: rem(14)
+
+    // =============================
+    // MENU
+    // =============================
+
+    .mobile-menu__btn
+        left: auto
+        right: -1px
+        width: 65px
+        height: 53px
+        border-radius: 20px 0px 0px 0px
+    .mobile-menu__icon
+        width: 30px
+        height: 25px
+
+    .mobile-menu-profile
+        padding: 4px 15px
+    .mobile-menu-profile__avatar
+        width: 50px
+        height: 50px
+    .mobile-menu-profile__name
+        max-width: 153px
+        height: 39px
+    .mobile-menu-profile::after
+        right: 12px
+
+    .mobile-menu-list
+        padding: 25px 15px 27px
+        height: calc(100% - 109px)
+
+    .main-menu_mobile .main-menu__link
+        margin-bottom: 25px
+    .main-menu_mobile .main-menu__count
+        margin-right: 22px
+    .main-menu_mobile .main-menu__border::after
+        bottom: 14px
+
+    .info-menu_mobile .info-menu__link
+        line-height: 31px
+        margin: 0 0 23px
+
+    // =============================
+    // LOGIN
+    // =============================
+
+    .header
+        height: 40px
+    .auth-panel
+        max-width: 360px
+        padding: 40px 35px
+    .logo__icon
+        width: 40px
+        height: 20px
+        margin-right: 15px
+        margin-left: 0
+    .logo__text
+        width: 63px
+        height: 13px
+    .logo-auth__logo
+        width: 170px
+        height: 84px
+    .logo-auth__title
+        font-size: rem(17)
+        border-width: 1px
+    .logo-auth__text
+        margin-top: 0
+        margin-bottom: 4px
+        font-size: rem(14)
+        line-height: 31px
+    .form-auth__input
+        font-size: rem(12)
+        height: 30px
+        line-height: 30px
+        padding: 0 10px
+        margin-top: 9px
+        &::placeholder
+            font-size: rem(12) 
+    .auth-panel__span
+        font-size: rem(12)
+    .btn_h2
+        font-size: rem(18)
+    .btn_full
+        line-height: 20px
+    .btn-share
+        width: 48%
+        position: relative
+        display: flex
+        justify-content: center
+        height: 40px
+        padding: 10px 0
+        box-sizing: border-box
+        background: #eee
+    .btn-share_facebook
+        background-color: #3c599b
+        &::after
+            content: ''
+            width: 11px
+            height: 20px
+            background: url('../img/_src/login/share/facebook.png') no-repeat center
+            background-size: contain
+    .btn-share_google
+        background-color: #da4b3e
+        &::after
+            content: ''
+            width: 20px
+            height: 20px
+            background: url('../img/_src/login/share/google.png') no-repeat center
+            background-size: contain
+    .auth-share
+        margin: 10px 0 17px
+
+    // =============================
+    // MYPAGE
+    // =============================
+
+    .header__left,
+    .profile-head
+        width: auto
+    .profile-head__name
+        margin-top: 5px
+        margin-right: 0
+
+    .p-mobile
+        padding: 10px 0
+    .p-mobile__name
+        margin-top: 0
+    .p-mobile__content
+        width: calc(100% - 71px)
+    .p-mobile__avatar
+        width: 60px
+        height: 60px
+    .p-mobile__see
+        line-height: 1
+
+    .about-rating__icon
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 15px
+        height: 15px
+        background-image: none
+        margin-left: 8px
+        &::after
+            content: ''
+            background-position: center
+            background-repeat: no-repeat
+            background-size: contain
+    .about-rating__icon_fb::after
+        width: 5px
+        height: 10px
+        background-image: url(../img/_src/main-page/a-icon/fb.png)
+    .about-rating__icon_in::after
+        margin-top: -1px
+        width: 8px
+        height: 8px
+        background-image: url(../img/_src/main-page/a-icon/in.png)
+    .about-rating__icon_tw::after
+        width: 9px
+        height: 7px
+        background-image: url(../img/_src/main-page/a-icon/tw.png)
+
+    .myskills_mobile
+        .myskills__item
+            min-width: 80px
+            width: 80px
+        .myskills__img
+            border-radius: 5px 5px 0px 0px
+        .myskills__vote
+            position: static
+            flex-direction: column
+            padding: 0
+        .myskills__vote-left,
+        .myskills__vote-right
+            width: 100% 
+        .myskills__vote-right
+            order: 0
+            border: $bd
+            border-radius: 0
+        .myskills__vote-left
+            order: 1
+            border-radius: 0px 0px 5px 5px
+        .myskills__color
+            max-width: 38px
+
+    .myskill-mobile
+        padding: 5px 0 10px
+    .myskill-mobile__content
+        padding-left: 15px
+
+    // =============================
+    // ACTION BTN
+    // =============================
+
+    .action-mobile
+        & .btn
+            width: calc(50% - 5px)
+            margin-right: 5px
+            min-width: 140px
+            height: 30px
+            line-height: 24px
+            padding: 0 5px
+        .btn-icon
+            margin-right: 5px
+        .btn-icon_addfriend
+            width: 19px
+            height: 12px
+        .btn-icon_send
+            width: 15px
+            height: 12px
+        .btn-icon_heart
+            width: 12px
+            height: 10px
+        .btn-icon_star
+            width: 16px
+            height: 15px
+            margin-top: -3px
+
+    // =============================
+    // ABOUT
+    // =============================
+
+    .profile-head__name_back::after
+        top: 7px
+
+    .p-mobile__about
+        margin-top: 8px
+        .list-me__item
+            margin-bottom: 5px
+
+    .about-mobile
+        // .about-me__item
+        //     padding: 15px 0
+        .about-me__item:first-child
+            padding-bottom: 15px
+        .list-me__item
+            margin-bottom: 5px
+        .list-me__title
+            width: 38%
+        .about-rating
+            flex-direction: column
+        .about-rating__col
+            width: 100%
+            &:first-child
+                padding-bottom: 15px
+                margin-bottom: 15px
+                flex-direction: row
+                align-items: center
+                border-bottom: $bd
+            .about-rating__text-str
+                margin-bottom: 0
+            .about-rating__list
+                text-align: left
+        // .about-rating__list-item
+        //     margin-bottom: 5px
+        .rating-skill__item
+            padding: 15px 0
+        .rating-skill__img
+            max-width: 80px
+            min-width: 80px
+            max-height: 127px
+            margin-right: 10px
+        .rating-skill__col-info
+            width: 60%
+        .rating-skill__col-total
+            width: 40%
+
+    .about-me__item
+        padding: 15px 0
+    .about-rating__list-item
+        display: flex
+        margin-bottom: 5px
+    
+
+    // =============================
+    // PAGE SKILL
+    // =============================
+
+    .list-me__title_big
+        width: 58%
+    .about-rating__list-text
+        width: 85%
+        max-width: 330px
+    .about-photo__img
+        min-width: 90px
+        width: 90px
+
+    .about-me__share
+        align-items: center
+
+    // =============================
+    // WRITE POST
+    // =============================
+
+    .write-post__input
+        &::placeholder
+            font-size: rem(12)
+    .write-post__icon
+        margin-right: 7px
+        background-size: contain
+    .write-post__icon_vote
+        width: 14px
+    .write-post__icon_photo
+        width: 12px
+    .write-post__icon_video
+        width: 10px
+    .write-post__icon_file
+        width: 11px
+    .write-post__icon_text
+        width: 13px
+    .write-post__icon_settings
+        width: 12px
+    .write-post__input+.write-post__action
+        top: 9px
+        right: 8px
+    .write-post__input
+        padding: 12px 120px 12px 15px
+        min-height: 40px
+        height: 40px
+
+    .write-post_full .write-post__input
+        padding: 12px 45px 12px 15px
+    .write-post__smile
+        width: 20px
+        height: 20px
+        right: 15px
+        background-size: contain
+
+    .p-table__nav
+        padding-top: 10px
+    .p-table__tab
+        margin-right: 20px
+    .p-table-search
+        right: 15px
+    .p-table-search__input
+        width: 20px
+        height: 20px
+        background-size: contain
+    .p-table__nav_search .post-comments-write__input
+        &::placeholder
+            font-size: rem(12)
+    .p-table__nav_search .p-table-search
+        top: 12px
+        padding: 0 15px
+
+    // =============================
+    // POST
+    // =============================
+
+    .post-item
+        padding-top: 20px
+    .post-author
+        padding-bottom: 10px
+    .post-author__avatar
+        width: 50px
+        height: 50px
+        margin-right: 8px
+    .post-author__name
+        max-width: 160px
+        line-height: 1
+    .post-author__icon-edit
+        width: 15px
+        height: 15px
+        background-size: contain
+    .post-author__icon-view
+        width: 16px
+        height: 10px
+        background-size: contain
+    .post-author__status
+        line-height: 1
+
+    .post-content
+        margin-top: 0
+        padding-bottom: 10px
+    .post-content__gallery
+        margin-top: 10px
+
+    .post-footer
+        padding: 10px 0
+    .post-footer__item
+        margin: 0 5px
+    .post-footer__count
+        margin-left: 5px
+    .post-footer__icon-comment
+        width: 16px
+        height: 15px
+        background-size: contain
+    .post-footer__icon-stars
+        width: 16px
+        height: 15px
+        background-size: contain
+    .post-footer__icon-repost
+        width: 15px
+        height: 15px
+        background-size: contain
+
+    // =============================
+    // POST - COMMENTS
+    // =============================
+
+    .post-comments__item
+        padding-top: 15px
+    .post-comments__avatar
+        width: 50px
+        height: 50px
+        margin-right: 10px
+    .post-comments__content
+        width: calc(100% - 60px)
+
+    .post-comments-write
+        left: -15px
+        padding-bottom: 60px
+    .post-comments-write__inp-wrap
+        width: calc(100% - 93px)
+    .post-comments-write__input
+        padding: 9px 30px 9px 10px
+        &::placeholder
+            font-size: rem(12)
+    .post-comments-write__smile
+        width: 15px
+        height: 15px
+    .post-comments-write__send
+        width: 23px
+        height: 20px
+    .post-comments .post-comments-write__send
+        position: relative
+        bottom: 8px
+
+    // =============================
+    // DIALOG
+    // =============================
+
+    .main-search_dialog
+        .main-search__input
+            padding: 12px 45px 12px 15px
+            font-size: rem(12)
+            &::placeholder
+                font-size: rem(12)
+        .main-search__icon_main
+            width: 19px
+            height: 20px
+            background-size: contain
+            right: 15px
+
+    .message__item
+        padding: 10px 15px
+    .message__avatar
+        width: 50px
+        height: 50px
+    .message__content
+        justify-content: center
+    .message__status
+        width: 5px
+        height: 5px
+        margin-top: -1px
+    .message__personal-mess
+        margin-top: 3px
+    .message__text
+        height: auto
+    .message__count
+        margin-right: 0
+
+    // =============================
+    // DIALOG - INNER
+    // =============================
+
+    .mymess-head__back::before
+        top: 3px
+    .mymess-head__delet
+        width: 15px
+        height: 15px
+        background-size: contain
+
+    .message_inner
+        padding-top: 0
+        max-height: calc(100vh - 142px)
+        min-height: calc(100vh - 142px)
+
+    .message__item_inner .message__content
+        padding-left: 10px
+    .message__personal-info
+        margin-top: 8px
+    .message__inner-text
+        margin-top: 5px
+
+    .message-write
+        padding: 6px 50px 6px 0
+        // .post-comments-write__input
+        //     min-height: 42px
+        //     padding: 0px 30px 9px 10px
+
+    // =============================
+    // TOP USER
+    // =============================
+
+    .top-users
+        height: auto
+
+    .p-table__header_pd
+        padding-top: 3px
+        padding-bottom: 3px
+    .main-search__icon_main,
+    .main-search__icon_settings
+        width: 15px
+        height: 15px
+        background-size: contain
+    .main-search__icon_main
+        right: 15px
+    .main-search__icon_settings
+        right: 45px
+    .main-search_add .main-search__input
+        padding: 6px 75px 6px 10px
+
+    .top-users__item::before
+        font-size: rem(14)
+        padding-bottom: 0
+        padding-right: 12px
+
+    .main-search__input
+        &::placeholder
+            font-size: rem(14)
+
+    .browse-skill::after
+        top: 1px
+
+    .p-table__content_pd
+        padding-top: 15px
+        padding-bottom: 15px
+
+    .top-users__avatar
+        width: 50px
+        height: 50px
+        margin-right: 10px
+    
+    .top-users__vote
+        width: 80px
+        top: 0
+        transform: none
+        .myskills__vote
+            flex-direction: column
+        .myskills__vote-left,
+        .myskills__vote-right
+            width: 100%
+            line-height: 1
+            padding-top: 2px
+            padding-bottom: 2px
+        .myskills__vote-right
+            order: 0
+            border: $bd
+            border-radius: 5px 5px 0px 0px
+        .myskills__vote-left
+            order: 1
+            border-radius: 0px 0px 5px 5px
+
+    .top-users__name,
+    .top-users__city
+        height: auto
+
+    .top-users__body
+        width: calc(100% - 80px)
+        min-height: 40px
+        justify-content: space-around
+    .top-users__item
+        margin-bottom: 15px
+    .top-users__last
+        margin-top: 15px
+        padding-top: 15px
+
+    // =============================
+    // VOTE
+    // =============================
+
+    .vote-users
+        margin-top: 0
+    .vote-users__item:last-child
+        margin-bottom: 0
+    .vote-users__avatar
+        width: 50px
+        height: 50px
+        margin-right: 10px
+    .vote-users__body
+        width: calc(100% - 60px)
+        align-items: flex-start
+    .vote-users__left,
+    .vote-users__right
+        flex-direction: column
+        width: 50%
+    .vote-users__left
+        align-items: flex-start
+    .vote-users__right
+        align-items: flex-end
+    .vote-users__name,
+    .vote-users__date
+        margin-right: 0
+    .vote-users__name,
+    .vote-users__cat,
+    .vote-users__count
+        max-width: 100%
+    .vote-users__cat
+        line-height: inherit
+
+    // =============================
+    // SETTINGS
+    // =============================
+
+    .main-setting__form
+        width: 100%
+
+    .main-setting .form-group__input, 
+    .main-setting .form-group__select,
+    .form-group__date
+        width: 180px 
+    .main-setting .form-group__textarea
+        width: 100%
+    .form-group_start
+        width: 100%
+        border-top: $bd
+        padding-top: 10px
+    .form-group_start .form-group__label
+        margin-bottom: 10px
+    
+    .form-group__date .form-group__select
+        padding: 9px 25px 9px 10px
+    
+    .main-setting .form-group__label
+        min-width: auto
+        margin-right: 20px
+
+    // =============================
+    // SEARCH
+    // =============================
+
+    .search-page .form-group
+        width: 100%
+
+    .search-page .main-search__input
+        padding: 15px 45px 15px 27px
+
+    // =============================
+    // STATIC
+    // =============================
+
+    .p-table__nav-date
+        right: 15px
+
+    
+    
+    
+
+        
+        

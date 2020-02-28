@@ -1,0 +1,108 @@
+@import ../vars
+	
+// =================================
+// РЕЙТИНГ ПО СКИЛЛАМ
+// =================================
+
+.browse-skill
+	text-decoration: none
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		top: 5px
+		right: -14px
+		width: 8px
+		height: 14px
+		background: url('../img/_src/dialog/back.svg') no-repeat center
+		background-size: contain
+		transition: 0.3s ease
+		transform: rotate(180deg)
+	&:hover.browse-skill::after
+		right: -20px
+
+.top-users
+	padding: 5px 30px 38px 25px
+	background: $c-w
+	border: $bd
+	border-radius: 5px
+	&__title
+	&__first
+		margin: 20px 0 0
+	&__last
+		margin-top: 30px
+		padding-top: 30px
+		border-top: $bd
+	&__list
+		list-style-type: none
+		&_first
+			counter-reset: num
+			& .top-users__item::before
+				color: $c-accent
+		&_last
+			counter-reset: num 3
+			& .top-users__item::before
+				color: $c-gray
+	&__item
+		display: flex
+		margin-bottom: 20px
+		&::before
+			content: counter(num)
+			counter-increment: num
+			font-size: rem(24)
+			font-weight: 500
+			display: flex
+			align-items: center
+			padding-right: 31px
+		&:last-child .top-users__body
+			border-bottom: 0 none
+	&__avatar
+		width: 60px
+		height: 60px
+		margin-right: 21px
+		border-radius: 5px
+		overflow: hidden
+		img
+			display: flex
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__body
+		position: relative
+		width: calc(100% - 126px)
+		// width: calc(100% - 81px)
+		display: flex
+		justify-content: space-between
+		align-items: center
+		border-bottom: $bd
+	// &__info
+	// 	display: flex
+	// 	align-items: center
+	// 	justify-content: space-between
+	// 	// width: calc(100% - 203px)
+	// 	// width: calc(100% - 238px)
+	// 	width: calc(100% - 150px)
+	// 	// margin-right: 88px
+	// 	// max-width: 348px
+	&__name
+		max-width: 33%
+		// max-width: 238px
+		// max-width: 47%
+		height: 39px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		text-decoration: none
+	&__city
+		max-width: 33%
+		// max-width: 195px
+		// max-width: 47%
+		height: 29px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		text-align: center
+	&__vote
+		max-width: 33%
+		width: 150px
+

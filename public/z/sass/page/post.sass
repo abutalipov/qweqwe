@@ -1,0 +1,294 @@
+@import ../vars
+	
+// =================================
+// РАЗДЕЛ ПОСТОВ И БЛОКА НАПИСАНИЯ ПОСТОВ
+// =================================
+
+.write-post
+	position: relative
+	margin: 40px 0
+	&__input
+		display: block
+		width: 100%
+		min-height: 60px
+		height: 60px
+		padding: 18px 215px 18px 25px
+		resize: none
+		background: $c-w
+		border: $bd
+		border-radius: 5px
+		box-sizing: border-box
+		overflow: hidden
+		word-wrap: break-word
+	&__icon
+		margin-right: 12px
+		height: 20px
+		background-repeat: no-repeat
+		background-position: center
+		cursor: pointer
+		transition: 0.3s ease
+		&:hover
+			transform: scale(.9)
+		&_vote
+			width: 28px
+			background-image: url('../img/_src/main-page/post-icon/1.png')
+		&_photo
+			width: 24px
+			background-image: url('../img/_src/main-page/post-icon/photo.png')
+		&_video
+			width: 21px
+			background-image: url('../img/_src/main-page/post-icon/video.png')
+		&_file
+			width: 17px
+			background-image: url('../img/_src/main-page/post-icon/doc.png')
+		&_text
+			width: 26px
+			background-image: url('../img/_src/main-page/post-icon/5.png')
+		&_settings
+			width: 20px
+			background-image: url('../img/_src/main-page/post-icon/settings.png')
+	&__smile
+		display: none
+		position: absolute
+		top: 15px
+		right: 32px
+		width: 30px
+		height: 30px
+		background: url('../img/_src/main-page/post-icon/smile.png') no-repeat center
+		cursor: pointer
+	&__footer
+		position: relative
+		display: none
+		height: 60px
+		padding: 10px 32px 10px 26px
+		background: $c-title
+		border-top: $bd
+		border-radius: 0px 0px 5px 5px
+		box-sizing: border-box
+	&__btn
+
+.write-post_full
+	border: $bd
+	border-radius: 5px
+	& .write-post__input
+		min-height: 145px
+		padding: 18px 60px 18px 25px
+		border: 0 none
+		border-radius: 5px 5px 0 0
+
+.write-post__footer .write-post__action
+	display: flex
+
+.write-post__input + .write-post__action
+	position: absolute
+	top: 19px
+	right: 18px
+	display: flex
+
+.write-post_full .write-post__smile
+	display: block
+.write-post_full .write-post__footer
+	display: flex
+	justify-content: space-between
+	align-items: center
+.write-post_full > .write-post__action
+	display: none
+
+
+.post-item
+	background: $c-w
+	padding: 20px 25px 0
+	border: $bd
+	border-radius: 5px
+	margin-bottom: 20px
+	&:first-child
+		border-top: 0 none
+		border-radius: 0 0 5px 5px
+.post-author
+	display: flex
+	justify-content: space-between
+	padding-bottom: 20px
+	border-bottom: $bd
+	&__col-info
+		display: flex
+	&__avatar
+		width: 100px
+		height: 100px
+		margin-right: 18px
+		border: $bd
+		border-radius: 5px
+		overflow: hidden
+		box-sizing: border-box
+		img
+			display: flex
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__info
+	&__name
+		max-width: 271px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+	&__time
+	&__status
+	&__action
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-end
+	&__edit
+		position: relative
+		display: flex
+		align-items: flex-end
+		text-decoration: none
+		line-height: 1
+	&__icon-edit
+		margin-left: 18px
+		width: 28px
+		height: 30px
+		background: url('../img/_src/main-page/post-icon/edit.png') no-repeat center
+	&__edit-text
+	&__view
+		display: flex
+		align-items: center
+		font-size: rem(18)
+		text-decoration: none
+		line-height: 1
+	&__icon-view
+		margin-left: 7px
+		width: 32px
+		height: 20px
+		background: url('../img/_src/main-page/post-icon/view.png') no-repeat center
+
+.post-content
+	margin-top: 30px
+	padding-bottom: 30px
+	border-bottom: $bd
+
+.post-content__gallery
+	margin-top: 38px
+	&-accent
+		display: flex
+		justify-content: space-between
+		max-height: 405px
+		img
+			width: 49.3%
+			object-fit: cover
+		&_full
+			img
+				width: 100%
+	&-mini
+		display: flex
+		justify-content: space-between
+		margin-top: 10px
+		img
+			width: 13%
+		
+.post-footer
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 20px 0
+	&__item
+		display: flex
+		align-items: center
+		margin: 0 25px
+		text-decoration: none
+		transition: 0.3s ease
+		&:hover .post-footer__count
+			color: $c-gray
+	&__icon-comment
+		width: 39px
+		height: 36px
+		background: url('../img/_src/main-page/post-icon/comment.png') no-repeat center
+	&__icon-stars
+		width: 48px
+		height: 46px
+		background: url('../img/_src/main-page/post-icon/star.png') no-repeat center
+	&__icon-repost
+		width: 37px
+		height: 36px
+		background: url('../img/_src/main-page/post-icon/repost.png') no-repeat center
+	&__count
+		font-size: rem(18)
+		color: $c-accent
+		margin-left: 10px
+
+.post-comments
+	border-top: $bd
+	// padding-top: 50px
+	&__item
+		display: flex
+		justify-content: space-between
+		padding-top: 40px
+		border-top: $bd
+		&:first-child
+			border: 0 none
+	&__avatar
+		width: 60px
+		height: 60px
+		margin-right: 18px
+		border-radius: 5px
+		overflow: hidden
+		img
+			display: flex
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__content
+		width: 90%
+	&__info
+		display: flex
+		justify-content: space-between
+	&__title
+		line-height: 1
+		text-decoration: none
+		border-bottom: 1px solid transparent
+		transition: 0.3s ease
+		&:hover
+			border-color: $c-accent
+	&__time
+	&__text
+.post-comments-write
+	display: flex
+	align-items: flex-end
+	position: relative
+	left: -25px
+	width: 100%
+	padding: 12px 25px
+	background: $c-title
+	border-top: $bd
+	border-radius: 0 0 5px 5px
+	&__avatar
+	&__inp-wrap
+		position: relative
+		width: 85%
+	&__input
+		width: 100%
+		padding: 9px 38px 9px 10px
+		border: $bd
+		border-radius: 5px
+		box-sizing: border-box
+		color: $c-gray
+		&::placeholder
+			color: $c-border
+	&__smile
+		position: absolute
+		top: 9px
+		right: 10px
+		width: 20px
+		height: 20px
+		background: url('../img/_src/main-page/post-icon/smile.png') no-repeat center
+		background-size: contain
+	&__send
+		margin-left: 10px
+		// margin: 0 0 6px 10px
+		width: 33px
+		height: 30px
+		background: url('../img/_src/main-page/post-icon/send.png') no-repeat center
+		background-size: contain
+		transition: 0.3s ease
+		cursor: pointer
+		&:hover
+			transform: scale(.9)

@@ -1,0 +1,67 @@
+@import ../vars
+	
+// =================================
+// ПРОГОЛОСОВАВШИЕ
+// =================================
+
+.vote-users
+	margin-top: 15px
+	&__list
+		list-style-type: none
+	&__item
+		display: flex
+		margin-bottom: 20px
+		&:last-child .vote-users__body
+			border-bottom: 0 none
+	&__avatar
+		width: 60px
+		height: 60px
+		margin-right: 21px
+		border-radius: 5px
+		overflow: hidden
+		img
+			display: flex
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__body
+		position: relative
+		width: calc(100% - 81px)
+		display: flex
+		justify-content: space-between
+		align-items: center
+		border-bottom: $bd
+	&__left
+		display: flex
+		align-items: center
+		max-width: 60%
+	&__right
+		display: flex
+		align-items: center
+		max-width: 40%
+	&__name
+		margin-right: 40px
+		max-width: 238px
+		// height: 39px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		text-decoration: none
+	&__cat
+		max-width: 195px
+		// height: 39px
+		line-height: 40px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		text-align: center
+	&__date
+		margin-right: 44px
+	&__count
+		max-width: 86.13px
+		// height: 29px
+		overflow: hidden
+		white-space: nowrap
+		text-overflow: ellipsis
+		text-align: center
+
