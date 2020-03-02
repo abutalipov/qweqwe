@@ -10,7 +10,9 @@ class Skill extends Model {
     use FullTextSearch;
     
     public $curUserVote = 'test';
-    
+    protected $fillable=[
+        'overall_weight'
+    ];
     protected $searchable = [
         'title'
     ];

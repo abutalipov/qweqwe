@@ -9,6 +9,7 @@ use App\Models\Profile;
 use App\Models\Theme;
 use App\Models\User;
 use App\Models\Skill;
+use App\Models\Vote;
 use App\Notifications\SendGoodbyeEmail;
 use App\Traits\CaptureIpTrait;
 use File;
@@ -139,7 +140,7 @@ class ProfilesController extends Controller {
         $currentUser = \Auth::user();
 
         if ($currentUser->id != $user->id) {
-            $votes = \App\Models\Vote::select('skill_id')->where(['voting_user_id' => $currentUser->id, 'user_id' => $user->id])->pluck('skill_id')->toArray();
+            $votes = Vote::select('skill_id')->where(['voting_user_id' => $currentUser->id, 'user_id' => $user->id])->pluck('skill_id')->toArray();
 
             foreach ($user->skills as $skill) {
                 $skill->voted = in_array($skill->id, $votes);
@@ -168,6 +169,7 @@ class ProfilesController extends Controller {
 
         return view('profiles.show')->with($data);
     }
+
 
     /**
      * /profiles/username/edit.

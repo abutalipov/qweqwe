@@ -14,6 +14,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\DeleteExpiredActivations::class,
+        Commands\reCalcRates::class,
+        Commands\reCalcSkillWeight::class,
+        Commands\reCalcOverallRating::class,
     ];
 
     /**
