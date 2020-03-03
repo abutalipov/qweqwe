@@ -135,6 +135,13 @@ class ProfilesController extends Controller {
             abort(404);
         }
         $user->skills;
+        $user->overall_rating = 0;
+        foreach($user->votes as $keys=>$vote){
+            $skill_weight = $vote->skill->overall_weight;
+            $vote_weight = $vote->weight;
+            $user->overall_rating +=$skill_weight*$vote_weight;
+        }
+        $user->overall_rating = round($user->overall_rating,2);
 
         $currentTheme = Theme::find($user->profile->theme_id);
         $currentUser = \Auth::user();

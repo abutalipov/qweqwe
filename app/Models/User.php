@@ -98,6 +98,9 @@ class User extends Authenticatable {
     public function walls() {
         return $this->hasMany('App\Models\Wall')->where('parent_id','=',NULL);
     }
+    public function votes() {
+        return $this->hasMany('App\Models\Vote');
+    }
     public function messages() {
         return $this->hasMany(ConversationMessage::class);
     }

@@ -16,7 +16,6 @@ class Kernel extends ConsoleKernel
         Commands\DeleteExpiredActivations::class,
         Commands\reCalcRates::class,
         Commands\reCalcSkillWeight::class,
-        Commands\reCalcOverallRating::class,
     ];
 
     /**

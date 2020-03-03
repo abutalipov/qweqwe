@@ -24,7 +24,7 @@ $iam = Auth::user()->name == $user->name;
         <div class="p-table__content-item p-table__content-item_active" id="myskils">
             <skills :user='{{Auth::User()}}' :otheruser='{{$user}}'></skills>
 
-            @if(false)
+            @if(true)
             <div class="myskills-footer hidden">
                 <div class="myskills-footer__item">
                     <div class="myskills-footer__icon"></div>
@@ -87,7 +87,7 @@ $iam = Auth::user()->name == $user->name;
                 </div>
                 <div class="about-me__item about-rating">
                     <div class="about-rating__col">
-                        <div class="about-rating__text-str type-h2 c-g" id="about-rat-info"><span class="about-rating__title">Overall rating:</span><span class="about-rating__val c-a">4,5</span></div>
+                        <div class="about-rating__text-str type-h2 c-g" id="about-rat-info"><span class="about-rating__title">Overall rating:</span><span class="about-rating__val c-a">{{$user->overall_rating}}</span></div>
                         <div class="about-rating__text-str">
                             <div class="about-rating__title type-h2 c-g">Share: </div>
                             <div class="about-rating__val">
