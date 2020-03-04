@@ -129,8 +129,10 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
     Route::put('post/{post}/new-comment', [
         'uses' => 'PostController@newComment',
     ]);
-
-    Route::post('/skills/vote', 'SkillsController@vote');
+    Route::get('user/{user}/skill/{skill}/vote', [
+        'as' => 'skills.vote',
+        'uses' => 'SkillsController@vote',
+    ]);
 });
 
 // Registered, activated, and is current user routes.

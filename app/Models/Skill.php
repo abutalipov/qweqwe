@@ -20,5 +20,7 @@ class Skill extends Model {
     public function users() {
         return $this->belongsToMany('App\Models\User');
     }
-
+    public function votes() {
+        return $this->hasMany('App\Models\Vote');
+    }
 }

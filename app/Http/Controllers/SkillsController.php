@@ -42,21 +42,16 @@ class SkillsController extends Controller {
         return view('skills.rating')->with($data);
     }
 
-    public function vote(Request $request) {
+    public function vote($userid, $skill_id) {
 
         $currentUser = \Auth::user();
-
-        $username = $request->input('user');
-        $skill_id = $request->input('skill');
-
         try {
-            $user = User::where(['name' => $username])->with(['skills' => function($query) use ($skill_id) {
+            $user = User::where('id',$userid)->with(['skills' => function($query) use ($skill_id) {
                             $query->whereIn('skill_id', [$skill_id]);
                         }])->firstOrFail();
         } catch (ModelNotFoundException $exception) {
             abort(404);
         }
-
         if ($currentUser->id == $user->id) {
             abort(406);
         }
@@ -65,13 +60,9 @@ class SkillsController extends Controller {
         $curUserSkill = SkillUser::where(['skill_id' => $skill_id, 'user_id' => $currentUser->id])->first();
         $weight = $curUserSkill ? $curUserSkill->weight : SkillUser::DEFAULT_WEIGHT;
 
-
         $vote = new Vote(['voting_user_id' => $currentUser->id, 'user_id' => $user->id, 'skill_id' => $skill_id, 'weight' => $weight]);
         $vote->save();
-
-
-
-        return response()->json([$username, $skill_id, $user->name, $vote->title], 200);
+        return redirect('/profile/' . $user->name);
     }
 
     public function pluck(Request $request) {
