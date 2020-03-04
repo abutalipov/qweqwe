@@ -29,7 +29,7 @@ $iam = Auth::user()->name == $user->name;
                         <?
                             $votes = $skill->votes->where('skill_id',$skill->id)->where('user_id',$user->id);
                         ?>
-                        <a class="myskills__item" href="#">
+                        <div class="myskills__item">
                             <div class="myskills__title type-h3">{{$skill->title}}</div>
                             <div class="myskills__content">
                                 <div class="myskills__bg"></div>
@@ -49,7 +49,7 @@ $iam = Auth::user()->name == $user->name;
                                     <div class="myskills__vote-right">R:<span class="myskills__color">{{$votes->count()}}</span></div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     @endforeach
                     @endif
                     <div class="myskills__all">
