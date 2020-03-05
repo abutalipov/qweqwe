@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SkillUser extends Model
 {
-    const DEFAULT_WEIGHT = 1;
+    const DEFAULT_WEIGHT = 0;
     
     public $test = 'asd';
     

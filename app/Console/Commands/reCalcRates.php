@@ -42,7 +42,6 @@ class reCalcRates extends Command
         $skill_votes = Vote::all()->groupBy('skill_id');
         foreach ($skill_votes as $skill_id=>$skill_vote){
             dump('          skill - '.$skill_id);
-            $count = $skill_vote->count();
             $userVotes = $this->userVotes($skill_vote);
             $avg = $this->avgSkillVotes($userVotes);
             $avgSqrt = $this->getAvqSqrt($userVotes,$avg);

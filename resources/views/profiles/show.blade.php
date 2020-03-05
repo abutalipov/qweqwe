@@ -45,7 +45,11 @@ $iam = Auth::user()->name == $user->name;
                                     @else
                                             <div class="myskills__vote-left"><s>Vote</s></div>
                                     @endif
-                                    <div class="myskills__vote-right">R:<span class="myskills__color">{{$votes->sum('weight')}}</span></div>
+                                    <?
+                                        $sw = $skill->overall_weight;
+                                        $usw = $skill->pivot->weight;
+                                        ?>
+                                    <div class="myskills__vote-right">R:<span class="myskills__color">{{$sw*$usw}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -55,18 +59,6 @@ $iam = Auth::user()->name == $user->name;
                         <button class="btn btn_accent btn_more">All skills</button>
                     </div>
                 </div>
-                @if(true)
-                    <div class="myskills-footer hidden">
-                        <div class="myskills-footer__item">
-                            <div class="myskills-footer__icon"></div>
-                            <div class="myskills-footer__text">Vote for skill</div>
-                        </div>
-                        <div class="myskills-footer__item">
-                            <div class="myskills-footer__icon"></div>
-                            <div class="myskills-footer__text">Add to favorites</div>
-                        </div>
-                    </div>
-                @endif
             </div>
             <div class="p-table__content-item " id="aboutme">
                 <div class="about-me">

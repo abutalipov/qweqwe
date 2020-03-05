@@ -56,11 +56,7 @@ class SkillsController extends Controller {
             abort(406);
         }
 
-        //Ищем у пользователя такой же скилл, и берем его вес
-        $curUserSkill = SkillUser::where(['skill_id' => $skill_id, 'user_id' => $currentUser->id])->first();
-        $weight = $curUserSkill ? $curUserSkill->weight : SkillUser::DEFAULT_WEIGHT;
-
-        $vote = new Vote(['voting_user_id' => $currentUser->id, 'user_id' => $user->id, 'skill_id' => $skill_id, 'weight' => $weight]);
+        $vote = new Vote(['voting_user_id' => $currentUser->id, 'user_id' => $user->id, 'skill_id' => $skill_id, ]);
         $vote->save();
         return redirect('/profile/' . $user->name);
     }
