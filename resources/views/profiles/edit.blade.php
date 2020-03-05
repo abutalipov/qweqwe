@@ -23,7 +23,6 @@ $currentSkills = $user->skills->map(function($items){
         <div class="p-table__nav">
             <div class="p-table__tab type-h2">Account</div>
             <div class="p-table__tab type-h2 p-table__tab_active">Profile</div>
-            <div class="p-table__tab type-h2">Account Administration</div>
         </div>
         <div class="p-table__content p-table__content_pd">
 
