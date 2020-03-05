@@ -136,10 +136,10 @@ class ProfilesController extends Controller {
         }
         $user->skills;
         $user->overall_rating = 0;
-        foreach($user->votes as $keys=>$vote){
-            $skill_weight = $vote->skill->overall_weight;
-            $vote_weight = $vote->weight;
-            $user->overall_rating +=$skill_weight*$vote_weight;
+        foreach($user->skills as $keys=>$skill){
+            $skill_user_weight = $skill->pivot->weight;
+            $skill_weight = $skill->overall_weight;
+            $user->overall_rating +=$skill_user_weight*$skill_weight;
         }
         $user->overall_rating = round($user->overall_rating,2);
 
