@@ -34,19 +34,18 @@ $iam = Auth::user()->name == $user->name;
                             <div class="myskills__content">
                                 <div class="myskills__bg"></div>
                                 <div class="myskills__img"><img src="/images/noimage1.png" alt=""></div>
-                                <div class="myskills__vote">
+                                <div class="myskills__vote" style="z-index: 10;" >
 
                                     @if(!$iam)
                                         @if($votes->where('voting_user_id',Auth::user()->id)->count()>0)
                                             <div class="myskills__vote-left">Voted</div>
                                             @else
-                                            <div class="myskills__vote-left"><a href="{{route('skills.vote',['skill'=>$skill->id,'user'=>$user->id])}}">Vote</a></div>
+                                            <div class="myskills__vote-left"><a style="z-index: 10; color:white;" href="{{route('skills.vote',['skill'=>$skill->id,'user'=>$user->id])}}">Vote</a></div>
                                         @endif
                                     @else
                                             <div class="myskills__vote-left"><s>Vote</s></div>
                                     @endif
-
-                                    <div class="myskills__vote-right">R:<span class="myskills__color">{{$votes->count()}}</span></div>
+                                    <div class="myskills__vote-right">R:<span class="myskills__color">{{$votes->sum('weight')}}</span></div>
                                 </div>
                             </div>
                         </div>
