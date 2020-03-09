@@ -145,7 +145,7 @@ $iam = Auth::user()->name == $user->name;
                             @foreach ($user->skills as $skill)
                                 <div class="rating-skill__item">
                                     <div class="rating-skill__col-info">
-                                        <div class="rating-skill__img"><img src="/z/img/_src/main-page/skill-1.png"
+                                        <div class="rating-skill__img"><img src="/images/noimage1.pngы"
                                                                             alt=""></div>
                                         <div class="rating-skill__name type-h2 c-a">{{$skill->title}}</div>
                                     </div>
