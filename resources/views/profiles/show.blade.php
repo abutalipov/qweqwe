@@ -127,14 +127,18 @@ $iam = Auth::user()->name == $user->name;
                         </div>
                         <div class="about-rating__col">
                             <ul class="about-rating__list list-clear type-h3" id="about-rat-list">
-                                <li class="about-rating__list-item c-g">Russian<span class="about-rating__accent c-a">7 th</span>
-                                </li>
-                                <li class="about-rating__list-item c-g">Ufa<span
-                                            class="about-rating__accent c-a">2 nd</span></li>
-                                <li class="about-rating__list-item c-g">Moscow<span class="about-rating__accent c-a">3 rd</span>
-                                </li>
-                                <li class="about-rating__list-item c-g">S.Peterburg<span
-                                            class="about-rating__accent c-a">5 th</span></li>
+                                @if(!is_null($user->r_0))
+                                <li class="about-rating__list-item c-g">Total<span class="about-rating__accent c-a">{{str_ordinal($user->r_0)}}</span></li>
+                                @endif
+                                @if(!is_null($user->r_1))
+                                    <li class="about-rating__list-item c-g">{{$user->profile->country}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_1)}}</span></li>
+                                @endif
+                                @if(!is_null($user->r_2))
+                                    <li class="about-rating__list-item c-g">{{$user->profile->city}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_2)}}</span></li>
+                                @endif
+                                @if(!is_null($user->r_3))
+                                    <li class="about-rating__list-item c-g">{{$user->profile->administrative}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_3)}}</span></li>
+                                @endif
                             </ul>
                         </div>
                     </div>

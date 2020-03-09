@@ -33,7 +33,8 @@
         "socialiteproviders/generators": "^4.4",
         "socialiteproviders/instagram": "^3.0",
         "socialiteproviders/twitch": "^5.0",
-        "socialiteproviders/youtube": "^3.0"
+        "socialiteproviders/youtube": "^3.0",
+      "ext-intl": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
