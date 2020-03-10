@@ -34,6 +34,7 @@ class Profile extends Model
         'bio',
         'twitter_username',
         'github_username',
+        'facebook_username',
         'user_profile_bg',
         'avatar',
         'avatar_status',

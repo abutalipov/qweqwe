@@ -29,6 +29,7 @@ return [
     'showProfileTheme'           => 'Theme',
     'showProfileTwitterUsername' => 'Twitter Username',
     'showProfileGitHubUsername'  => 'Github Username',
+    'showProfileFacebookUsername'  => 'Facebook Username',
 
     // USER profile page
     'showProfileTitle' => ':username\'s Profile',
@@ -51,6 +52,9 @@ return [
 
     'label-twitter_username' => 'Your Twitter username:',
     'ph-twitter_username'    => 'Enter your Twitter username',
+
+    'label-facebook_username' => 'Your Facebook username:',
+    'ph-facebook_username'    => 'Enter your Facebook username',
 
     // User Account Settings Tab
     'editTriggerAlt'        => 'Toggle User Menu',

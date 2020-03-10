@@ -111,7 +111,11 @@ $currentSkills = $user->skills->map(function($items){
 
                     <div class="form-group">
                         <label class="form-group__label type-h3 type-h4_m c-g" for="">Github</label>
-                        {!! Form::text('github_username', old('github_username'), array('id' => 'github_username', 'class' => 'form-group__input', 'placeholder' => trans('profile.ph-twitter_username'))) !!}
+                        {!! Form::text('github_username', old('github_username'), array('id' => 'github_username', 'class' => 'form-group__input', 'placeholder' => trans('profile.ph-github_username'))) !!}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group__label type-h3 type-h4_m c-g" for="">Facebook</label>
+                        {!! Form::text('facebook_username', old('facebook_username'), array('id' => 'facebook_username', 'class' => 'form-group__input', 'placeholder' => trans('profile.ph-facebook_username'))) !!}
                     </div>
 
 

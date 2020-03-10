@@ -228,7 +228,7 @@ class ProfilesController extends Controller {
     public function update(UpdateUserProfile $request, $username) {
         $user = $this->getUserByUsername($username);
 
-        $input = $request->only('theme_id','birthday', 'location', 'bio', 'twitter_username', 'github_username', 'avatar_status', 'administrative', 'country', 'city', 'address');
+        $input = $request->only('theme_id','birthday', 'location', 'bio', 'twitter_username', 'github_username','facebook_username', 'avatar_status', 'administrative', 'country', 'city', 'address');
 
         $ipAddress = new CaptureIpTrait();
 

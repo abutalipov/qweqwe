@@ -95,12 +95,18 @@ $iam = Auth::user()->name == $user->name;
                                 </li>
                             @endif
 
-                            @if($user->profile->twitter_username)
-                                <li class="list-me__item">
-                                    <div class="list-me__title type-h3">Twitter:</div>
-                                    <div class="list-me__val">{{$user->profile->twitter_username}}</div>
-                                </li>
-                            @endif
+                                @if($user->profile->twitter_username)
+                                    <li class="list-me__item">
+                                        <div class="list-me__title type-h3">Twitter:</div>
+                                        <div class="list-me__val">{{$user->profile->twitter_username}}</div>
+                                    </li>
+                                @endif
+                                @if($user->profile->facebook_username)
+                                    <li class="list-me__item">
+                                        <div class="list-me__title type-h3">Facebook:</div>
+                                        <div class="list-me__val">{{$user->profile->facebook_username}}</div>
+                                    </li>
+                                @endif
 
                             @if($user->profile->bio)
                                 <li class="list-me__item">
