@@ -113,37 +113,38 @@ $iam = Auth::user()->name == $user->name;
                     <div class="about-me__item about-rating">
                         <div class="about-rating__col">
                             <div class="about-rating__text-str type-h2 c-g" id="about-rat-info"><span
-                                        class="about-rating__title">Overall rating:</span><span
+                                        class="about-rating__title">Overall rank:</span><span
                                         class="about-rating__val c-a">{{$user->overall_rating}}</span></div>
                             <div class="about-rating__text-str">
                                 <div class="about-rating__title type-h2 c-g">Share:</div>
                                 <div class="about-rating__val">
-                                    <div class="about-rating__icon-bl"><a
-                                                class="about-rating__icon about-rating__icon_fb" href="#"></a><a
-                                                class="about-rating__icon about-rating__icon_in" href="#"></a><a
-                                                class="about-rating__icon about-rating__icon_tw" href="#"></a></div>
+                                    <div class="about-rating__icon-bl">
+                                        <a class="about-rating__icon about-rating__icon_fb" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"></a>
+                                        <a class="about-rating__icon about-rating__icon_in" href="https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}"></a>
+                                        <a class="about-rating__icon about-rating__icon_tw" href="http://twitter.com/share?url={{urlencode(Request::url())}}"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="about-rating__col">
                             <ul class="about-rating__list list-clear type-h3" id="about-rat-list">
                                 @if(!is_null($user->r_0))
-                                <li class="about-rating__list-item c-g">Total<span class="about-rating__accent c-a">{{str_ordinal($user->r_0)}}</span></li>
+                                <li class="about-rating__list-item c-g">Total Skill Rank<span class="about-rating__accent c-a">{{str_ordinal($user->r_0)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_1))
-                                    <li class="about-rating__list-item c-g">{{$user->profile->country}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_1)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->country}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_1)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_2))
-                                    <li class="about-rating__list-item c-g">{{$user->profile->city}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_2)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->city}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_2)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_3))
-                                    <li class="about-rating__list-item c-g">{{$user->profile->administrative}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_3)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->administrative}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_3)}}</span></li>
                                 @endif
                             </ul>
                         </div>
                     </div>
                     <div class="about-me__item rating-skill">
-                        <div class="rating-skill__title type-h2 c-g">Rating by skill</div>
+                        <div class="rating-skill__title type-h2 c-g">Rank by Skill</div>
                         <div class="rating-skill__list">
 
                             @foreach ($user->skills as $skill)
