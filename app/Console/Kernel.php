@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         Commands\reCalcRates::class,
         Commands\reCalcSkillWeight::class,
         Commands\reCalcRating::class,
+        Commands\reCalcSkillRating::class,
     ];
 
     /**

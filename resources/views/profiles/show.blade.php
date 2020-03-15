@@ -22,38 +22,41 @@ $iam = Auth::user()->name == $user->name;
         </div>
         <div class="p-table__content p-table__content_pd">
             <div class="p-table__content-item p-table__content-item_active" id="myskils">
-                <!--<skills :user='{{Auth::User()}}' :otheruser='{{$user}}'></skills>-->
+            <!--<skills :user='{{Auth::User()}}' :otheruser='{{$user}}'></skills>-->
                 <div class="myskills">
                     @if(true)
-                    @foreach($user->skills as $skill)
-                        <?
-                            $votes = $skill->votes->where('skill_id',$skill->id)->where('user_id',$user->id);
-                        ?>
-                        <div class="myskills__item">
-                            <div class="myskills__title type-h3">{{$skill->title}}</div>
-                            <div class="myskills__content">
-                                <div class="myskills__bg"></div>
-                                <div class="myskills__img"><img src="/images/noimage1.png" alt=""></div>
-                                <div class="myskills__vote" style="z-index: 10;" >
+                        @foreach($user->skills as $skill)
+                            <?
+                            $votes = $skill->votes->where('skill_id', $skill->id)->where('user_id', $user->id);
+                            ?>
+                            <div class="myskills__item">
+                                <div class="myskills__title type-h3">{{$skill->title}}</div>
+                                <div class="myskills__content">
+                                    <div class="myskills__bg"></div>
+                                    <div class="myskills__img"><img src="/images/noimage1.png" alt=""></div>
+                                    <div class="myskills__vote" style="z-index: 10;">
 
-                                    @if(!$iam)
-                                        @if($votes->where('voting_user_id',Auth::user()->id)->count()>0)
-                                            <div class="myskills__vote-left">Voted</div>
+                                        @if(!$iam)
+                                            @if($votes->where('voting_user_id',Auth::user()->id)->count()>0)
+                                                <div class="myskills__vote-left">Voted</div>
                                             @else
-                                            <div class="myskills__vote-left"><a style="z-index: 10; color:white;" href="{{route('skills.vote',['skill'=>$skill->id,'user'=>$user->id])}}">Vote</a></div>
-                                        @endif
-                                    @else
+                                                <div class="myskills__vote-left"><a style="z-index: 10; color:white;"
+                                                                                    href="{{route('skills.vote',['skill'=>$skill->id,'user'=>$user->id])}}">Vote</a>
+                                                </div>
+                                            @endif
+                                        @else
                                             <div class="myskills__vote-left"><s>Vote</s></div>
-                                    @endif
-                                    <?
+                                        @endif
+                                        <?
                                         $sw = $skill->overall_weight;
                                         $usw = $skill->pivot->weight;
                                         ?>
-                                    <div class="myskills__vote-right">R:<span class="myskills__color">{{$sw*$usw}}</span></div>
+                                        <div class="myskills__vote-right">R:<span
+                                                    class="myskills__color">{{$sw*$usw}}</span></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     @endif
                     <div class="myskills__all">
                         <button class="btn btn_accent btn_more">All skills</button>
@@ -95,18 +98,18 @@ $iam = Auth::user()->name == $user->name;
                                 </li>
                             @endif
 
-                                @if($user->profile->twitter_username)
-                                    <li class="list-me__item">
-                                        <div class="list-me__title type-h3">Twitter:</div>
-                                        <div class="list-me__val">{{$user->profile->twitter_username}}</div>
-                                    </li>
-                                @endif
-                                @if($user->profile->facebook_username)
-                                    <li class="list-me__item">
-                                        <div class="list-me__title type-h3">Facebook:</div>
-                                        <div class="list-me__val">{{$user->profile->facebook_username}}</div>
-                                    </li>
-                                @endif
+                            @if($user->profile->twitter_username)
+                                <li class="list-me__item">
+                                    <div class="list-me__title type-h3">Twitter:</div>
+                                    <div class="list-me__val">{{$user->profile->twitter_username}}</div>
+                                </li>
+                            @endif
+                            @if($user->profile->facebook_username)
+                                <li class="list-me__item">
+                                    <div class="list-me__title type-h3">Facebook:</div>
+                                    <div class="list-me__val">{{$user->profile->facebook_username}}</div>
+                                </li>
+                            @endif
 
                             @if($user->profile->bio)
                                 <li class="list-me__item">
@@ -125,9 +128,12 @@ $iam = Auth::user()->name == $user->name;
                                 <div class="about-rating__title type-h2 c-g">Share:</div>
                                 <div class="about-rating__val">
                                     <div class="about-rating__icon-bl">
-                                        <a class="about-rating__icon about-rating__icon_fb" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"></a>
-                                        <a class="about-rating__icon about-rating__icon_in" href="https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}"></a>
-                                        <a class="about-rating__icon about-rating__icon_tw" href="http://twitter.com/share?url={{urlencode(Request::url())}}"></a>
+                                        <a class="about-rating__icon about-rating__icon_fb"
+                                           href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"></a>
+                                        <a class="about-rating__icon about-rating__icon_in"
+                                           href="https://www.linkedin.com/shareArticle?mini=true&url={{Request::url()}}"></a>
+                                        <a class="about-rating__icon about-rating__icon_tw"
+                                           href="http://twitter.com/share?url={{urlencode(Request::url())}}"></a>
                                     </div>
                                 </div>
                             </div>
@@ -135,16 +141,20 @@ $iam = Auth::user()->name == $user->name;
                         <div class="about-rating__col">
                             <ul class="about-rating__list list-clear type-h3" id="about-rat-list">
                                 @if(!is_null($user->r_0))
-                                <li class="about-rating__list-item c-g">Total Skill Rank<span class="about-rating__accent c-a">{{str_ordinal($user->r_0)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Total Skill Rank<span
+                                                class="about-rating__accent c-a">{{str_ordinal($user->r_0)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_1))
-                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->country}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_1)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->country}}<span
+                                                class="about-rating__accent c-a">{{str_ordinal($user->r_1)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_2))
-                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->city}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_2)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->city}}<span
+                                                class="about-rating__accent c-a">{{str_ordinal($user->r_2)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_3))
-                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->administrative}}<span class="about-rating__accent c-a">{{str_ordinal($user->r_3)}}</span></li>
+                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->administrative}}
+                                        <span class="about-rating__accent c-a">{{str_ordinal($user->r_3)}}</span></li>
                                 @endif
                             </ul>
                         </div>
@@ -156,19 +166,36 @@ $iam = Auth::user()->name == $user->name;
                             @foreach ($user->skills as $skill)
                                 <div class="rating-skill__item">
                                     <div class="rating-skill__col-info">
-                                        <div class="rating-skill__img"><img src="/images/noimage1.pngы"
+                                        <div class="rating-skill__img"><img src="/images/noimage1.png"
                                                                             alt=""></div>
                                         <div class="rating-skill__name type-h2 c-a">{{$skill->title}}</div>
                                     </div>
                                     <div class="rating-skill__col-total">
                                         <ul class="about-rating__list list-clear type-h3">
-                                            <li class="about-rating__list-item about-rating__list-item_total"><span
-                                                        class="about-rating__total type-h2 c-a">40</span></li>
-                                            <li class="about-rating__list-item c-g">{{$user->profile->country}}<span
-                                                        class="about-rating__accent c-a">7 th</span></li>
-                                            <li class="about-rating__list-item c-g">{{$user->profile->city}}<span
-                                                        class="about-rating__accent c-a">2 nd</span></li>
-                                        </ul>
+                                            @if(!is_null($skill->pivot->r_0))
+                                                <li class="about-rating__list-item c-g">Total Skill Rank<span
+                                                            class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_0)}}</span>
+                                                </li>
+                                            @endif
+                                            @if(!is_null($skill->pivot->r_1))
+                                                <li class="about-rating__list-item c-g">Rank
+                                                    by {{$user->profile->country}}<span
+                                                            class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_1)}}</span>
+                                                </li>
+                                            @endif
+                                            @if(!is_null($skill->pivot->r_2))
+                                                <li class="about-rating__list-item c-g">Rank by {{$user->profile->city}}
+                                                    <span
+                                                            class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_2)}}</span>
+                                                </li>
+                                            @endif
+                                            @if(!is_null($skill->pivot->r_3))
+                                                <li class="about-rating__list-item c-g">Rank
+                                                    by {{$user->profile->administrative}}
+                                                    <span class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_3)}}</span>
+                                                </li>
+                                        @endif
+
                                     </div>
                                 </div>
                             @endforeach

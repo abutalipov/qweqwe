@@ -12,7 +12,6 @@ class SkillUser extends Model
     
     protected $table = 'skill_user';
     
-    
     public function user()
     {
         return $this->belongsTo('App\Models\User');
