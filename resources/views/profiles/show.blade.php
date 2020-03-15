@@ -58,9 +58,9 @@ $iam = Auth::user()->name == $user->name;
                             </div>
                         @endforeach
                     @endif
-                    <div class="myskills__all">
+                    <!--<div class="myskills__all">
                         <button class="btn btn_accent btn_more">All skills</button>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <div class="p-table__content-item " id="aboutme">
