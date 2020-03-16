@@ -255,7 +255,7 @@ $iam = Auth::user()->name == $user->name;
                     @if (!$user->profile)
                         @continue
                     @endif
-                    <div class="p-table__content-item p-table__content-item_active" id="myposts">
+                    <div class="p-table__content-item p-table__content-item_active" id="myposts_{{$wall->id}}">
                         <div class="post-item container-mobile">
                             <div class="post-author">
                                 <div class="post-author__col-info">
@@ -270,10 +270,10 @@ $iam = Auth::user()->name == $user->name;
                                 <div class="post-author__action"><a class="post-author__edit" href="#">
                                         <div class="post-author__edit-text type-h3 c-b hidden-mobile">Edit</div>
                                         <div class="post-author__icon-edit"></div>
-                                    </a><a class="post-author__view" href="#">
+                                    </a><!--<a class="post-author__view" href="#">
                                         <div class="post-author__view-text type-h4_m c-b">253</div>
                                         <div class="post-author__icon-view"></div>
-                                    </a></div>
+                                    </a>--></div>
                             </div>
                             <div class="post-content">
 
@@ -289,9 +289,9 @@ $iam = Auth::user()->name == $user->name;
                                     <div class="post-footer__icon-stars"></div>
                                     <div class="post-footer__count type-h4_m">253</div>
                                 </a>
-                                <a class="post-footer__item" href="#">
+                                <a class="post-footer__item" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}%23myposts_{{$wall->id}}&summary={{$wall->content}}&title=%23myposts_{{$wall->id}}">
                                     <div class="post-footer__icon-repost"></div>
-                                    <div class="post-footer__count type-h4_m">253</div>
+                                    <!--<div class="post-footer__count type-h4_m">253</div>-->
                                 </a>
                             </div>
 

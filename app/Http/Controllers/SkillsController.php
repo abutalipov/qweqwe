@@ -22,21 +22,49 @@ class SkillsController extends Controller {
     }
 
     public function rating(Request $request, $skillname = null) {
-       try {
+        $s=$request->get('search_f',false);
+
+        if ($s or $s===null){
+            return redirect('/skills/rating/'.$s);
+        }
+        try {
             $skill = Skill::where(['title'=>$skillname])->firstOrFail();
         } catch (ModelNotFoundException $exception) {
-            abort(404);
+            $skill = null;
         }
-
+        $sus=null;
         //sus - SkillUser`S
+        if ($skill)
         $sus = SkillUser::with('user')->where(['skill_id'=>$skill->id])->orderBy('rating', 'desc')->get();
 
         //return $users;
 
         $data = [
             'skill' => $skill,
+            'skillname' => $skillname,
             'sus' => $sus,
-            'user' => \Auth::user(),            
+            'user' => \Auth::user(),
+        ];
+
+        return view('skills.rating')->with($data);
+    }
+    public function index(Request $request, $skillname = null) {
+        $s=$request->get('search_f',false);
+
+        if ($s or $s===null){
+            return redirect('/skills/rating/'.$s);
+        }
+
+        //sus - SkillUser`S
+        $sus = SkillUser::with('user')->orderBy('r_0', 'desc')->get();
+
+        //return $users;
+
+        $data = [
+            'skill' => null,
+            'skillname' => '',
+            'sus' => $sus,
+            'user' => \Auth::user(),
         ];
 
         return view('skills.rating')->with($data);

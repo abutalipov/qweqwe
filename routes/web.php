@@ -54,7 +54,8 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
 
     Route::get('/sapi/wall/{username}', ['as' => '{username}', 'uses' => 'WallController@list']);
 
-    Route::get('/skills/rating/{skillname}', ['as' => '{skillname?}', 'uses' => 'SkillsController@rating']);
+    Route::get('/skills/rating/{skillname}', [ 'uses' => 'SkillsController@rating']);
+    Route::get('/skills/rating/', [ 'uses' => 'SkillsController@index']);
 
     Route::get('search', 'SearchController@index')->name('search');
 

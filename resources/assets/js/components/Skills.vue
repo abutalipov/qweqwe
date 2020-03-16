@@ -5,6 +5,7 @@
             <div class="myskills__title type-h3"><a :href="`/skills/rating/${skill.title}`">{{skill.title}}</a></div>
             <div class="myskills__content" >
 
+                <div class="myskills__bg"></div>
                 <div v-if='skill.image' class="myskills__img"  style=" ">
                     <img :src="skill.image" alt="" >
                 </div>
@@ -22,14 +23,36 @@
                     <div class="myskills__vote-right">R:<span class="myskills__color">15</span></div>
                 </div>
                 
-                <div v-else class="myskills__vote">
+             <!--   <div v-else class="myskills__vote">
                     <a class="myskills__vote-left">.....</a>                    
                     <div class="myskills__vote-right">R:<span class="myskills__color">...</span></div>
-                </div>
+                </div>-->
                 
             </div>
-        </div>
+            <!--////////////////////////-->
+          <!-- <div class="myskills__content">
+                <div class="myskills__vote" style="z-index: 10;">
 
+                    @if(!$iam)
+                    @if($votes->where('voting_user_id',Auth::user()->id)->count()>0)
+                    <div class="myskills__vote-left">Voted</div>
+                    @else
+                    <div class="myskills__vote-left"><a style="z-index: 10; color:white;"
+                                                        href="{{route('skills.vote',['skill'=>$skill->id,'user'=>$user->id])}}">Vote</a>
+                    </div>
+                    @endif
+                    @else
+                    <div class="myskills__vote-left"><s>Vote</s></div>
+                    @endif
+                    <?
+                                        $sw = $skill->overall_weight;
+                    $usw = $skill->pivot->weight;
+                    ?>
+                    <div class="myskills__vote-right">R:<span
+                            class="myskills__color">{{$sw*$usw}}</span></div>
+                </div>
+            </div>-->
+        </div>
         <div class="about-me__more type-h3" @click='changeMaxSkills'>See more</div>
     </div>
 </template>
