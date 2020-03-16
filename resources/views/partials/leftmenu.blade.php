@@ -7,7 +7,7 @@
     <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/news') }}"><span class="main-menu__icon main-menu__icon_news"></span><span class="main-menu__text">News</span><!--<span class="main-menu__count">15</span>--></a></li>
     <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/friends') }}"><span class="main-menu__icon main-menu__icon_friend"></span><span class="main-menu__text">Friends</span></a></li>
     <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/statistics') }}"><span class="main-menu__icon main-menu__icon_static"></span><span class="main-menu__text">Statistics</span></a></li>
-    <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/skills/rating/1')}}"><span class="main-menu__icon main-menu__icon_skill"></span><span class="main-menu__text">Skills</span></a></li>
+    <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/skills/rating')}}"><span class="main-menu__icon main-menu__icon_skill"></span><span class="main-menu__text">Skills</span></a></li>
     <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/search') }}"><span class="main-menu__icon main-menu__icon_search"></span><span class="main-menu__text">Search</span></a></li>
     <li class="main-menu__item"><a class="main-menu__link type-h3" href="{{ url('/profile/'.Auth::user()->name) }}/edit"><span class="main-menu__icon main-menu__icon_profile"></span><span class="main-menu__text">Profile</span></a></li>
 </ul>
