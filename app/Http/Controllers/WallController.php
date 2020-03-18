@@ -33,4 +33,15 @@ class WallController extends Controller
         return json_encode($walls);
 
     }
+    public function update(Request $request){
+        $wall_id = $request->get('wall_id',false);
+        $content = $request->get('content',false);
+        $wall = Wall::find($wall_id);
+        if ($wall && $content){
+            $wall->update(['content'=>$content]);
+            return json_encode($wall);
+        }else{
+            return json_encode(['error'=>'not updated']);
+        }
+    }
 }
