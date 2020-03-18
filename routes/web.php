@@ -53,6 +53,7 @@ Route::get('/pages/{uri}', ['as' => '{uri}', 'uses' => 'PagesController@view']);
 Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'checkblocked']], function () {
 
     Route::get('/sapi/wall/{username}', ['as' => '{username}', 'uses' => 'WallController@list']);
+    Route::get('/wall/search', [ 'uses' => 'WallController@search']);
 
     Route::get('/skills/rating/{skillname}', [ 'uses' => 'SkillsController@rating']);
     Route::get('/skills/rating/', [ 'uses' => 'SkillsController@index']);
