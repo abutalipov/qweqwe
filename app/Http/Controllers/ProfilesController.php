@@ -128,7 +128,7 @@ class ProfilesController extends Controller {
      *
      * @return Response
      */
-    public function show($username) {
+    public function show(Request $request,$username) {
         try {
             $user = $this->getUserByUsername($username);
         } catch (ModelNotFoundException $exception) {
@@ -167,8 +167,15 @@ class ProfilesController extends Controller {
             }
 
         }
+        if($request->has('post_q')){
+            $post_q = $request->get('post_q');
+        }else{
+            $post_q = '';
+        }
 
+        $user->wallsi = $user->walls()->where('content','like','%'.$post_q.'%')->get();
         $data = [
+            'post_q'=> $post_q,
             'user' => $user,
             'currentTheme' => $currentTheme,
             'currentUser' => $currentUser,

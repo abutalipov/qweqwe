@@ -105,6 +105,7 @@ $iam = Auth::user()->name == $user->name;
                                     <div class="list-me__title type-h3">Twitter:</div>
                                     <div class="list-me__val">{{$user->profile->twitter_username}}</div>
                                 </li>
+                                </li>
                             @endif
                             @if($user->profile->facebook_username)
                                 <li class="list-me__item">
@@ -241,19 +242,19 @@ $iam = Auth::user()->name == $user->name;
 
     @if ($user->walls->count())
         <div class="p-table" id="table-post">
-            <div class="p-table__nav container-mobile">
-                <div class="p-table__tab type-h2 type-h3_m">All posts</div>
+            <div class="p-table__nav container-mobile p-table__nav_search">
+                <!--<div class="p-table__tab type-h2 type-h3_m">All posts</div>-->
                 <div class="p-table__tab type-h2 type-h3_m p-table__tab_active">My posts</div>
-                <div class="p-table-search">
+                <form class="p-table-search">
                     <div class="p-table-search__write">
-                        <input class="post-comments-write__input type-h4_m" name="" placeholder="Write a search...">
+                        <input class="post-comments-write__input type-h4_m" value="{{$post_q}}" name="post_q" placeholder="Write a search...">
                     </div>
-                    <div class="p-table-search__input"></div>
-                </div>
+                    <input type="submit" class="p-table-search__input" value>
+                </form>
             </div>
             <div class="p-table__content">
 
-                @foreach($user->walls as $wall)
+                @foreach($user->wallsi as $wall)
                     @if (!$user->profile)
                         @continue
                     @endif
