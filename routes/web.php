@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
 
     Route::get('/skills/rating/{skillname}', [ 'uses' => 'SkillsController@rating']);
     Route::get('/skills/rating/', [ 'uses' => 'SkillsController@index']);
+    Route::get('/skills', [ 'uses' => 'SkillsController@profileskill']);
 
     Route::get('search', 'SearchController@index')->name('search');
 
@@ -132,7 +133,7 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
     Route::put('post/{post}/new-comment', [
         'uses' => 'PostController@newComment',
     ]);
-    Route::get('user/{user}/skill/{skill}/vote', [
+    Route::post('skills/vote', [
         'as' => 'skills.vote',
         'uses' => 'SkillsController@vote',
     ]);

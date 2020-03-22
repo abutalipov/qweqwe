@@ -69,12 +69,26 @@ class SkillsController extends Controller {
 
         return view('skills.rating')->with($data);
     }
+    public function profileskill(Request $request){
+        $user_id = $request->get('user_id');
+        $user = User::find($user_id);
+        $skills = $user->skills;
+        $me = Auth::user();
+        foreach ($skills as $skill){
+            $skill->voted = $skill->votes->where('skill_id', $skill->id)->where('user_id', $user_id)->where('voting_user_id', $me->id)->first();
+            $sw = $skill->overall_weight;
+            $usw = $skill->pivot->weight;
+            $skill->rating_sum = $sw * $usw;
+        }
+        return json_encode(['skills'=>$skills,'iam'=>Auth::user()->id,'user_id'=>$user_id]);
 
-    public function vote($userid, $skill_id) {
-
+    }
+    public function vote(Request $request) {
+        $user = $request->get('user');
+        $skill_id = $request->get('skill');
         $currentUser = \Auth::user();
         try {
-            $user = User::where('id',$userid)->with(['skills' => function($query) use ($skill_id) {
+            $user = User::where('id',$user)->with(['skills' => function($query) use ($skill_id) {
                             $query->whereIn('skill_id', [$skill_id]);
                         }])->firstOrFail();
         } catch (ModelNotFoundException $exception) {
@@ -86,7 +100,7 @@ class SkillsController extends Controller {
 
         $vote = new Vote(['voting_user_id' => $currentUser->id, 'user_id' => $user->id, 'skill_id' => $skill_id, ]);
         $vote->save();
-        return redirect('/profile/' . $user->name);
+        return json_encode($vote);
     }
 
     public function pluck(Request $request) {

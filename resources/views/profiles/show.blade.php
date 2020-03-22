@@ -22,9 +22,11 @@ $iam = Auth::user()->name == $user->name;
         </div>
         <div class="p-table__content p-table__content_pd">
             <div class="p-table__content-item p-table__content-item_active" id="myskils">
-            <!--<skills :user='{{Auth::User()}}' :otheruser='{{$user}}'></skills>-->
+                @if(true)
+                    <skills user="{{$user->id}}"></skills>
+                @endif
+                @if(false)
                 <div class="myskills">
-                    @if(true)
                         @foreach($user->skills as $skill)
                             <?
                             $votes = $skill->votes->where('skill_id', $skill->id)->where('user_id', $user->id);
@@ -57,11 +59,11 @@ $iam = Auth::user()->name == $user->name;
                                 </div>
                             </div>
                         @endforeach
-                    @endif
                     <!--<div class="myskills__all">
                         <button class="btn btn_accent btn_more">All skills</button>
                     </div>-->
                 </div>
+                    @endif
             </div>
             <div class="p-table__content-item " id="aboutme">
                 <div class="about-me">
