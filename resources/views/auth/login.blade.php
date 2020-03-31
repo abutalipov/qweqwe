@@ -23,8 +23,8 @@
             <div class="auth-panel">
                 <div class="logo-auth">
                     <div class="logo-auth__logo"></div>
-                    <h1 class="logo-auth__title">Rating social network</h1>
-                    <h2 class="logo-auth__text">Upload your skills, earn and rate.</h2>
+                    <h1 class="logo-auth__title">A Ranking Social Network</h1>
+                    <h2 class="logo-auth__text">Rate the skills of people you know and find out where you stand.</h2>
                 </div>
                 <form class="form form-auth" method="POST" action="{{ route('login') }}">
                     @csrf
@@ -41,14 +41,14 @@
                     </span>
                     @endif
                     <a class="auth-panel__span auth-panel__span_m type-h4" href="{{ route('password.request') }}">Forgot password?</a>
-                    <button class="btn btn_accent btn_full btn_h2" type="submit">Login</button>
+                    <button class="btn btn_accent btn_full btn_h2" type="submit">Sign in</button>
                 </form>
                 <div class="auth-share">
                     <a class="btn-share btn-share_facebook" href="{{ route('social.redirect',['provider' => 'facebook']) }}"></a>
                     <a class="btn-share btn-share_google" href="{{ route('social.redirect',['provider' => 'google']) }}"></a>
                 </div>
                 <div class="auth-create"><span class="auth-panel__span">Don't have an account?</span>
-                    <div class="auth-create__link-center"><a class="auth-create__link type-h2 type-h3_m" href="#">Create</a></div>
+                    <div class="auth-create__link-center"><a class="auth-create__link type-h2 type-h3_m" href="/register">Join now</a></div>
                 </div>
             </div>
         </div>
