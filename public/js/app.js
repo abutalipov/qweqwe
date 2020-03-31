@@ -56043,7 +56043,7 @@ var render = function() {
                             { staticClass: "myskills__vote-left" },
                             [
                               _vm.iam == _vm.user_id
-                                ? [_c("s", [_vm._v("vote")])]
+                                ? [_c("br")]
                                 : [_vm._v("voted")]
                             ],
                             2

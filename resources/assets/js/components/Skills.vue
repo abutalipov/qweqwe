@@ -20,7 +20,7 @@
                         <a v-if="iam!=user_id && !skill.voted" href="#" class="myskills__vote-left"
                            @click.prevent='vote(index)'>Vote</a>
                         <div v-else class="myskills__vote-left">
-                            <template v-if="iam==user_id"><s>vote</s></template>
+                            <template v-if="iam==user_id"><br></template>
                             <template v-else>voted</template>
                         </div>
                         <div class="myskills__vote-right">R:<span class="myskills__color">{{skill.rating_sum}}</span>
