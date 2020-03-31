@@ -173,7 +173,7 @@ class ProfilesController extends Controller {
             $post_q = '';
         }
 
-        $user->wallsi = $user->walls()->where('content','like','%'.$post_q.'%')->get();
+        $user->wallsi = $user->walls()->where('content','like','%'.$post_q.'%')->orderBy('created_at', 'desc')->get();
         $data = [
             'post_q'=> $post_q,
             'user' => $user,

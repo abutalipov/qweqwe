@@ -88,7 +88,7 @@ $iam = Auth::user()->name == $user->name;
                         <ul class="list-me list-clear list-me_hidden">
                             @if($user->email)
                                 <li class="list-me__item">
-                                    <div class="list-me__title type-h3">Mail:</div>
+                                    <div class="list-me__title type-h3">E-mail:</div>
                                     <div class="list-me__val">{{$user->email}}</div>
                                 </li>
                             @endif
@@ -125,7 +125,7 @@ $iam = Auth::user()->name == $user->name;
                     <div class="about-me__item about-rating">
                         <div class="about-rating__col">
                             <div class="about-rating__text-str type-h2 c-g" id="about-rat-info"><span
-                                        class="about-rating__title">Overall rank:</span><span
+                                        class="about-rating__title">Overall Rank:</span><span
                                         class="about-rating__val c-a">{{$user->overall_rating}}</span></div>
                             <div class="about-rating__text-str">
                                 <div class="about-rating__title type-h2 c-g">Share:</div>
@@ -148,22 +148,22 @@ $iam = Auth::user()->name == $user->name;
                                                 class="about-rating__accent c-a">{{str_ordinal($user->r_0)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_1))
-                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->country}}<span
+                                    <li class="about-rating__list-item c-g">Rank in {{$user->profile->country}}<span
                                                 class="about-rating__accent c-a">{{str_ordinal($user->r_1)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_2))
-                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->city}}<span
+                                    <li class="about-rating__list-item c-g">Rank in {{$user->profile->city}}<span
                                                 class="about-rating__accent c-a">{{str_ordinal($user->r_2)}}</span></li>
                                 @endif
                                 @if(!is_null($user->r_3))
-                                    <li class="about-rating__list-item c-g">Rank by {{$user->profile->administrative}}
+                                    <li class="about-rating__list-item c-g">Rank in {{$user->profile->administrative}}
                                         <span class="about-rating__accent c-a">{{str_ordinal($user->r_3)}}</span></li>
                                 @endif
                             </ul>
                         </div>
                     </div>
                     <div class="about-me__item rating-skill">
-                        <div class="rating-skill__title type-h2 c-g">Rank by Skill</div>
+                        <div class="rating-skill__title type-h2 c-g">Rank in Skill</div>
                         <div class="rating-skill__list">
 
                             @foreach ($user->skills as $skill)
@@ -181,20 +181,18 @@ $iam = Auth::user()->name == $user->name;
                                                 </li>
                                             @endif
                                             @if(!is_null($skill->pivot->r_1))
-                                                <li class="about-rating__list-item c-g">Rank
-                                                    by {{$user->profile->country}}<span
+                                                <li class="about-rating__list-item c-g">Rank in {{$user->profile->country}}<span
                                                             class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_1)}}</span>
                                                 </li>
                                             @endif
                                             @if(!is_null($skill->pivot->r_2))
-                                                <li class="about-rating__list-item c-g">Rank by {{$user->profile->city}}
+                                                <li class="about-rating__list-item c-g">Rank in {{$user->profile->city}}
                                                     <span
                                                             class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_2)}}</span>
                                                 </li>
                                             @endif
                                             @if(!is_null($skill->pivot->r_3))
-                                                <li class="about-rating__list-item c-g">Rank
-                                                    by {{$user->profile->administrative}}
+                                                <li class="about-rating__list-item c-g">Rank in {{$user->profile->administrative}}
                                                     <span class="about-rating__accent c-a">{{str_ordinal($skill->pivot->r_3)}}</span>
                                                 </li>
                                         @endif
