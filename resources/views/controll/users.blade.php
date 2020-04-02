@@ -32,6 +32,7 @@ Users
                 <tr>
                     <th>Пользователь</th>
                     <th>Скилл</th>
+                    <th>Вес скила</th>
                     <th>Вес голоса</th>
                     <th>Рейтинг</th>
 
@@ -42,11 +43,18 @@ Users
                 </tr>
 
                 @foreach ($user->skills as $skill)
+                        <?
+                        $votes = $skill->votes->where('skill_id', $skill->id)->where('user_id', $user->id);
+
+                        $sw = $skill->overall_weight;
+                        $usw = $skill->pivot->weight;
+                        ?>
                 <tr>
                     <td></td>
                     <td>{{$skill->title}}</td>
-                    <td>{{$skill->pivot->weight}}</td>
-                    <td>{{$skill->pivot->rating}}</td>
+                    <td>{{$sw}}</td>
+                    <td>{{$usw}}</td>
+                    <td>{{$usw*$sw}}</td>
                 </tr>
                 @endforeach
 
