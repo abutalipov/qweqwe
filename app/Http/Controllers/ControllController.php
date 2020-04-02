@@ -9,11 +9,13 @@ use App\Models\Profile;
 use App\Models\Theme;
 use App\Models\User;
 use App\Models\Skill;
+use App\Models\Vote;
 use App\Notifications\SendGoodbyeEmail;
 use App\Traits\CaptureIpTrait;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Image;
 use jeremykenedy\Uuid\Uuid;
@@ -51,6 +53,11 @@ class ControllController extends Controller {
 
     public function index(Request $request) {
         
+    }
+    public function deleteVotes(Request $request){
+        Vote::truncate();
+
+        return back();
     }
 
 }

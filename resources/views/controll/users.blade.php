@@ -16,7 +16,7 @@ Users
     <a class="nav-link" href="{{ route('controll_users') }}">Скиллы пользователей</a>
 </li>
 
-<li><button class="btn btn-outline-danger my-2 my-sm-0" >Удалить голоса</button></li>
+<li><a href="/controll/delete-votes"> <button class="btn btn-outline-danger my-2 my-sm-0" >Удалить голоса</button></a></li>
 <li><button class="btn btn-outline-success my-2 my-sm-0" >Пересчитать рейтинги</button></li>
 <li><button class="btn btn-outline-success my-2 my-sm-0" >Пересчитать веса</button></li>
 <li><button class="btn btn-outline-success my-2 my-sm-0" >Пересчитать единый</button></li>

@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth', 'activated', 'activity', 'twostep', 'chec
 
     Route::get('controll/votes', 'ControllController@votes')->name('controll_votes');
     Route::get('controll/users', 'ControllController@users')->name('controll_users');
+    Route::get('controll/delete-votes', 'ControllController@deleteVotes')->name('controll_delete_votes');
 
 
   /*  Route::get('authfor/{username}', function ($username) {
